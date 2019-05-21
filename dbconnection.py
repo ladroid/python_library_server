@@ -242,6 +242,23 @@ def get_time_take(email):
     except:
         print("Unable to connect to the db")
 
+def get_free_books():
+    list_free_books = []
+    try:
+        conn = connetion_db()
+        print("Connected")
+        cur = conn.cursor()
+        cur.execute('''SELECT books.bookid FROM books
+                       FULL OUTER JOIN persons
+                       ON books.point = persons.point
+                       WHERE books.point IS NULL OR persons.point IS NULL''')
+        for free_books in cur:
+            for i in free_books:
+                list_free_books.append(i)
+        return list_free_books
+    except:
+        print("Unable to connect to the db")
+
 #insert_students(21, 'Alberto', 'Qasterro', 'albert@yahoo.mail.com', 'alberto', datetime.date(1998, 3, 12), 'M', '11C', 93, '+13224567890')
 #remove_student()
 #get_students()
@@ -254,3 +271,4 @@ def get_time_take(email):
 #print(get_borrows_student())
 print(search_student("hazgreen@gmail.com"))
 get_time_take("hazgreen@gmail.com")
+print(get_free_books())

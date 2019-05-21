@@ -46,10 +46,11 @@ def studinfo():
 
 @app.route('/stud/')
 def stud():
-    return render_template('registration.html')
+    return render_template('registration.html', free_books = dbconnection.get_free_books())
 
 @app.route('/stud/', methods=['POST'])
 def post_data_stud():
+    gender_type = ['M', 'F']
     if request.method == 'POST':
         id_ = request.form['id']
         fname = request.form['fname']
@@ -61,8 +62,11 @@ def post_data_stud():
         job = request.form['job']
         point = request.form['point']
         phonenumber = request.form['phonenumber']
-        dbconnection.insert_students(id_, fname, sname, email, password, dtime, gender, job, point, phonenumber)
-        return render_template('result.html', results = dbconnection.get_book())
+        if gender in gender_type:
+            dbconnection.insert_students(id_, fname, sname, email, password, dtime, gender, job, point, phonenumber)
+            return render_template('result.html', results = dbconnection.get_book())
+        else:
+            return 'Something went wrong try again', 404
 
 @app.route('/admin/')
 def admin():
