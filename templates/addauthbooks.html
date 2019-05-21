@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form class="form-horizontal" action='' method="POST">
+      <fieldset>
+        <div id="legend">
+          <legend class="">Admin</legend>
+        </div>
+        <h2>Add author</h2>
+        <div class="control-group">
+          <!-- id -->
+          <label class="control-label"  for="id_author">Id:</label>
+          <div class="controls">
+            <input type="number" id="id_author" name="id_author" placeholder="" class="input-xlarge">
+            <p class="help-block">Id can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- name -->
+          <label class="control-label"  for="fname_author">First name:</label>
+          <div class="controls">
+            <input type="text" id="fname_author" name="fname_author" placeholder="" class="input-xlarge">
+            <p class="help-block">First name can contain any letters or numbers, without spaces</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- surname -->
+          <label class="control-label"  for="lname_author">Last name:</label>
+          <div class="controls">
+            <input type="text" id="lname_author" name="lname_author" placeholder="" class="input-xlarge">
+            <p class="help-block">Last name can contain any letters or numbers, without spaces</p>
+          </div>
+        </div>
+
+        <br><br>
+
+        <h2>Add book</h2>
+        <div class="control-group">
+          <!-- E-mail -->
+          <label class="control-label" for="id_book">Id:</label>
+          <div class="controls">
+            <input type="number" id="id_book" name="id_book" placeholder="" class="input-xlarge">
+            <p class="help-block">Id of book can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Password-->
+          <label class="control-label" for="name_book">Name:</label>
+          <div class="controls">
+            <input type="text" id="name_book" name="name_book" placeholder="" class="input-xlarge">
+            <p class="help-block">Name of book can contain only letters</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Date -->
+          <label class="control-label"  for="pagecount">Pagecount:</label>
+          <div class="controls">
+            <input type="number" id="pagecount" name="pagecount" placeholder="" class="input-xlarge">
+            <p class="help-block">Page of book can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Sex -->
+          <label class="control-label"  for="point">Point:</label>
+          <div class="controls">
+            <input type="number" id="point" name="point" placeholder="" class="input-xlarge">
+            <p class="help-block">Point(book's location) can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Class -->
+          <label class="control-label"  for="author_id">Author ID:</label>
+          <div class="controls">
+            <input type="number" id="author_id" name="author_id" placeholder="" class="input-xlarge">
+            <p class="help-block">Author id can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Point -->
+          <label class="control-label"  for="type_id">Type ID:</label>
+          <div class="controls">
+            <input type="number" id="type_id" name="type_id" placeholder="" class="input-xlarge">
+            <p class="help-block">Type(genre of book) id(1-18) can contain only numbers</p>
+          </div>
+        </div>
+
+        <div class="control-group">
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

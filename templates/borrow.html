@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form class="form-horizontal" action='' method="POST">
+      <fieldset>
+        <div id="legend">
+          <center>
+            <legend class="">Borrow</legend>
+          </center>
+        </div> 
+
+        <div class="control-group">
+          <!-- Email -->
+          <div class="controls">
+            <input type="borrow" id="borrow" name="borrow" placeholder="Search borrow" class="input-xlarge">
+            <p class="help-block">Enter a borrow</p>
+          </div>
+        </div>
+        <div class="control-group">
+            <!-- Button -->
+            <div class="controls">
+              <button class="btn btn-success">Go</button>
+            </div>
+        </div>
+        <div class="container">
+            <p>All borrows:</p>
+            <ul>
+                {% for r in results %}
+                <li>{{r}}</li>
+                {% endfor %}
+            </ul>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
+

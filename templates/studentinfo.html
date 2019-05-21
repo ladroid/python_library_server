@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form class="form-horizontal" action='' method="POST">
+      <fieldset>
+        <div id="legend">
+          <legend class="">Student Info</legend>
+        </div>
+        <div class="img">
+          <img src="/static/images/person.png" alt="person" width="100" height="100"/>
+        </div>
+        <div class="container">
+          {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+                  <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                  {{message}}
+                </div>
+              {% endfor %}
+            {% endif %}
+          {% endwith %} 
+          {% block body %}{% endblock %}
+        </div>
+        </div>
+        <div class="control-group">
+          <!-- get name -->
+          <div class="controls">
+            <p class="help-block">{{name}}</p>
+          </div>
+        </div>
+        <div class="control-group">
+            <!-- get surname -->
+            <div class="controls">
+                <p class="help-block">{{surname}}</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- get email -->
+            <div class="controls">
+                <p class="help-block">{{email}}</p>
+            </div>
+        </div>
+        <div class="control-group">
+            <!-- get phonenumber -->
+            <div class="controls">
+                <p class="help-block">{{phonenumber}}</p>
+            </div>
+        </div>
+        <div class="control-group">
+          <!-- taken book-->
+          <div class="controls">
+            <p class="help-block">Taken book is "{{takenbook}}"</p>
+          </div>
+        </div>
+        <div class="container">
+          <p>Books:</p>
+          <ul>
+            {% for r in results %}
+              {% for t in r %}
+                <li>{{t}}</li>
+              {% endfor %}
+            {% endfor %}
+          </ul>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>

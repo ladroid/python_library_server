@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <form class="form-horizontal" action='' method="POST">
+      <fieldset>
+        <div id="legend">
+          <legend class="">Admin</legend>
+        </div>
+        <h2>Delete author</h2>
+        <div class="control-group">
+          <!--delete id -->
+        <div class="control-group">
+          <!-- name -->
+          <label class="control-label"  for="fname_author">Delete name:</label>
+          <div class="controls">
+            <input type="text" id="fname_author" name="fname_author" placeholder="" class="input-xlarge">
+            <p class="help-block">First name can contain any letters or numbers, without spaces</p>
+          </div>
+        </div>
+
+        <br><br>
+
+        <h2>Delete book</h2>
+        <div class="control-group">
+          <!-- Delete name -->
+          <label class="control-label" for="name_book">Name:</label>
+          <div class="controls">
+            <input type="text" id="name_book" name="name_book" placeholder="" class="input-xlarge">
+            <p class="help-block">Name of book can contain only letters</p>
+          </div>
+        </div>
+        <div class="control-group">
+          <!-- Button -->
+          <div class="controls">
+            <button class="btn btn-success">Submit</button>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </body>
+</html>
