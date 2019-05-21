@@ -22,7 +22,7 @@ def start_index():
                     flash("Please choose new book", "warning")
                 else:
                     flash("Days to bring " + timer.timerdb(dbconnection.get_time_take(email)), "success")
-                return render_template('studentinfo.html', name = dbconnection.get_info_student(email, password)[0],
+                return render_template('personinfo.html', name = dbconnection.get_info_student(email, password)[0],
                                         surname = dbconnection.get_info_student(email, password)[1],
                                         email = dbconnection.get_info_student(email, password)[2], 
                                         phonenumber = dbconnection.get_info_student(email, password)[3],
@@ -46,7 +46,7 @@ def studinfo():
 
 @app.route('/stud/')
 def stud():
-    return render_template('students.html')
+    return render_template('registration.html')
 
 @app.route('/stud/', methods=['POST'])
 def post_data_stud():
