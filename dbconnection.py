@@ -259,6 +259,16 @@ def get_free_books():
     except:
         print("Unable to connect to the db")
 
+def update_book(point, email):
+    try:
+        conn = connetion_db()
+        print("Connected")
+        cur = conn.cursor()
+        cur.execute('''UPDATE persons SET point = %s WHERE email = %s''', (point, email))
+        conn.commit()
+    except:
+        print("Unable to connect to the db")
+
 #insert_students(21, 'Alberto', 'Qasterro', 'albert@yahoo.mail.com', 'alberto', datetime.date(1998, 3, 12), 'M', '11C', 93, '+13224567890')
 #remove_student()
 #get_students()
