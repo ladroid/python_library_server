@@ -62,13 +62,15 @@
         </div>
         <div class="container">
           <p>Books:</p>
-          <ul>
-            {% for r in results %}
-              {% for t in r %}
-                <li>{{t}}</li>
+          <ol>
+            <ul>
+              {% for r in results %}
+                {% for t in r %}
+                  <li>{{t}}</li>
+                {% endfor %}
               {% endfor %}
-            {% endfor %}
-          </ul>
+            </ul>
+          </ol>
         </div>
       </fieldset>
     </form>
