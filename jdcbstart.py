@@ -98,8 +98,9 @@ def addauthbooks_work():
         point = request.form['point']
         authorId = request.form['author_id']
         typeId = request.form['type_id']
+        textbook = request.form['textbook']
         dbconnection.insert_authorz(id_author, name_author, sname_author)
-        dbconnection.insert_book(id_book, name_book, pagecount, point, authorId, typeId)
+        dbconnection.insert_book(id_book, name_book, pagecount, point, authorId, typeId, textbook)
         return render_template('resall.html', results= dbconnection.get_book())
 
 @app.route('/deleteauthbooks/')

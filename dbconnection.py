@@ -78,13 +78,13 @@ def insert_authorz(id_, name, surname):
     except:
         print("Unable to connect to the db")
 
-def insert_book(bookId, name, pagecount, point, authorId, typeId):
+def insert_book(bookId, name, pagecount, point, authorId, typeId, textbook):
     try:
         conn = connetion_db()
         print("Connected")
         cur = conn.cursor()
-        cur.execute("INSERT INTO books (bookId, name, pagecount, point, authorId, typeId) VALUES (%s, %s, %s, %s, %s, %s)",
-                    (bookId, name, pagecount, point, authorId, typeId))
+        cur.execute("INSERT INTO books (bookId, name, pagecount, point, authorId, typeId, textbook) VALUES (%s, %s, %s, %s, %s, %s, %s)",
+                    (bookId, name, pagecount, point, authorId, typeId, textbook))
         conn.commit()
     except:
         print("Unable to connect to the db")
